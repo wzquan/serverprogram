@@ -1,0 +1,5 @@
+c:\users\wuzhenquan\documents\visual studio 2010\Projects\register\register\bin\register.dll
+c:\users\wuzhenquan\documents\visual studio 2010\Projects\register\register\bin\register.pdb
+c:\users\wuzhenquan\documents\visual studio 2010\Projects\register\register\obj\Debug\ResolveAssemblyReference.cache
+c:\users\wuzhenquan\documents\visual studio 2010\Projects\register\register\obj\Debug\register.dll
+c:\users\wuzhenquan\documents\visual studio 2010\Projects\register\register\obj\Debug\register.pdb
