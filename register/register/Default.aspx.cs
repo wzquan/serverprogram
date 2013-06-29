@@ -24,7 +24,7 @@ namespace register
                 Application["StatCount"] = int.Parse(Application["StatCount"].ToString()) + 1;
                 //解锁
                 Application.UnLock();
-                Session[Session["ip"].ToString()] = "1";
+                Session[Session["ip"].ToString()+"1"] = "1";
             }
            // if (!Page.IsPostBack)
            // {
