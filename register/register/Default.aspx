@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
 <p><font size="5" color="blue">主页</font></p>
-用户类型：<asp:TextBox ID="name" runat="server"></asp:TextBox></br>
-密&nbsp;&nbsp; 码：<asp:TextBox ID="password" TextMode="Password" runat="server"></asp:TextBox>
+用户类型：<asp:TextBox ID="name" runat="server"></asp:TextBox><br />
+密&nbsp; &nbsp; 码：<asp:TextBox ID="password" TextMode="Password" runat="server"></asp:TextBox>
     <br />
-    </br>
+    <br />
     <asp:Button ID="Button1" runat="server" Text="登录" onclick="Button1_Click" />
 <p>这个人很懒，什么东西也没留下。请戳这里
  
