@@ -11,18 +11,40 @@ namespace register
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack) { OutputUserCount(); }
+            
         }
-        protected void OutputUserCount() //显示当前站点在线人数
+        private int usertype(string userid)
         {
-            Response.Write("站点在线人数：");
-            Response.Write(Application["UserCount"].ToString());
-            Response.Write("  人。");
-
-            Response.Write("本页面的访问量：");
-            Response.Write(Application["StatCount"].ToString());
-            Response.Write("   。");
-
+            if (userid == "admin")
+            {
+                return 1;
+            }
+            else if (userid == "user")
+            {
+                return 2;
+            }
+            else
+                return 0;
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string userid = name.Text.ToString();
+            string pwd = password.Text.ToString();
+            Session["UserType"] = usertype(userid);
+            switch (Session["UserType"].ToString())
+            {
+                case "1":
+                    Response.Write("<script>alert('你是管理员，是合法用户！')</script>");
+                    break;
+                case "2":
+                    Response.Write("<script>alert('你是用户，是合法用户！')</script>");
+                    break;
+                default:
+                    Response.Write("<script>alert('你不是合法用户！')</script>");
+                    break;
+            }
+        }
+
     }
 }

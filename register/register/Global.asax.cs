@@ -38,7 +38,7 @@ namespace register
             //测试某一页的访问量※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
             String pageurl = Request.Url.ToString();//获取用户访问的页面
 
-            if (pageurl.EndsWith("Default.aspx")) //判断访问的是否是默认页
+            if (pageurl.EndsWith("register.aspx")) //判断访问的是否是默认页
             {
                 //锁定变量
                 Application.Lock();
