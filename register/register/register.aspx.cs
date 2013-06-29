@@ -16,7 +16,7 @@ namespace register
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session[Session["ip"].ToString()].ToString() != "1")
+            if(Session[Session["ip"].ToString()+"2"].ToString() != "1")
             {
             //锁定变量
             Application.Lock();

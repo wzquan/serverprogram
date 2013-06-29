@@ -16,7 +16,7 @@ namespace register
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session[Session["ip"].ToString()].ToString() != "2")
+            if (Session[Session["ip"].ToString()+"1"].ToString() != "1")
             {
                 //锁定变量
                 Application.Lock();
@@ -24,7 +24,7 @@ namespace register
                 Application["StatCount"] = int.Parse(Application["StatCount"].ToString()) + 1;
                 //解锁
                 Application.UnLock();
-                Session[Session["ip"].ToString()] = "2";
+                Session[Session["ip"].ToString()] = "1";
             }
            // if (!Page.IsPostBack)
            // {

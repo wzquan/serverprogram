@@ -39,7 +39,8 @@ namespace register
             String pageurl = Request.Url.ToString();//获取用户访问的页面
             string ipAddress = Request.ServerVariables["REMOTE_ADDR"];
             Session["ip"]=ipAddress;
-            Session[Session["ip"].ToString()] = "0";
+            Session[Session["ip"].ToString()+"1"] = "0";
+            Session[Session["ip"].ToString() + "2"] = "0";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
