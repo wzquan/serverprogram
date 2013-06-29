@@ -80,6 +80,17 @@
     <center>
     <asp:Button ID="Button1" runat="server"  Text="注册" OnClick="Button1_Click"/>
     </center>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        <asp:Label ID="show" runat="server"></asp:Label>
+    </p>
     </form>
 </body>
 </html>

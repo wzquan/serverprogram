@@ -21,11 +21,11 @@ namespace register
             Application.Lock();      //临界变量,使用加锁功能,其他用户不能访问。
             Application["StatCount"] = 0;
             Application.UnLock();     //临界变量被解锁。
-            /*
+            
             Application.Lock();      //临界变量,使用加锁功能,其他用户不能访问。
-            Application["StatCount_ViewSF"] = 0;
+            Application["StatCount2"] = 0;
             Application.UnLock();     //临界变量被解锁。
-             * */
+            
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -37,26 +37,9 @@ namespace register
 
             //测试某一页的访问量※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※
             String pageurl = Request.Url.ToString();//获取用户访问的页面
-
-            if (pageurl.EndsWith("register.aspx")) //判断访问的是否是默认页
-            {
-                //锁定变量
-                Application.Lock();
-                //页面访问量加一
-                Application["StatCount"] = int.Parse(Application["StatCount"].ToString()) + 1;
-                //解锁
-                Application.UnLock();
-            }
-            /*
-            else if (pageurl.EndsWith("ViewStateForm.aspx")) //判断访问的是否是默认页
-            {
-                //锁定变量
-                Application.Lock();
-                //页面访问量加一
-                Application["StatCount_ViewSF"] = int.Parse(Application["StatCount_ViewSF"].ToString()) + 1;
-                //解锁
-                Application.UnLock();
-            }*/
+            string ipAddress = Request.ServerVariables["REMOTE_ADDR"];
+            Session["ip"]=ipAddress;
+            Session[Session["ip"].ToString()] = "0";
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

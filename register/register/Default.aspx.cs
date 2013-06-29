@@ -9,9 +9,27 @@ namespace register
 {
     public partial class Default : System.Web.UI.Page
     {
+        protected void OutputUserCount() //显示当前站点在线人数
+        {
+            show.Text = "站点在线人数：" + Application["UserCount"].ToString() + "<br />本页面的访问量：" + Application["StatCount"].ToString();
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session[Session["ip"].ToString()].ToString() != "2")
+            {
+                //锁定变量
+                Application.Lock();
+                //页面访问量加一
+                Application["StatCount"] = int.Parse(Application["StatCount"].ToString()) + 1;
+                //解锁
+                Application.UnLock();
+                Session[Session["ip"].ToString()] = "2";
+            }
+           // if (!Page.IsPostBack)
+           // {
+                OutputUserCount();
+            //}
         }
         private int usertype(string userid)
         {

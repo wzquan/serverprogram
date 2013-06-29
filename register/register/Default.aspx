@@ -17,6 +17,27 @@
 <p>这个人很懒，什么东西也没留下。请戳这里
  
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/register.aspx">注册</asp:HyperLink>（统计在线人数，网站中的访问量，并完成用户信息合法性判断）
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
+    <p>
+        <asp:Label ID="show" runat="server"></asp:Label>
+    </p>
     </form>
     </body>
 </html>
